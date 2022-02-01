@@ -1,0 +1,17 @@
+{
+	"name": "SQL script 5",
+	"properties": {
+		"content": {
+			"query": "COPY INTO [dbo].[Trip]\nFROM 'https://nytaxiblob.blob.core.windows.net/2013/Trip2013/QID6392_20171107_05910_0.txt.gz'\nWITH\n(\n    FILE_TYPE = 'CSV',\n    FIELDTERMINATOR = '|',\n    FIELDQUOTE = '',\n    ROWTERMINATOR='0X0A',\n    COMPRESSION = 'GZIP'\n)\nOPTION (LABEL = 'COPY : Load [dbo].[Trip] - Taxi dataset');\n",
+			"metadata": {
+				"language": "sql"
+			},
+			"currentConnection": {
+				"databaseName": "sqldbpooljuliano2",
+				"poolName": "sqldbpooljuliano2"
+			},
+			"resultLimit": 5000
+		},
+		"type": "SqlQuery"
+	}
+}

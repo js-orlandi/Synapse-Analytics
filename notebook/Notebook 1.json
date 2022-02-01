@@ -1,0 +1,49 @@
+{
+	"name": "Notebook 1",
+	"properties": {
+		"nbformat": 4,
+		"nbformat_minor": 2,
+		"sessionProperties": {
+			"driverMemory": "28g",
+			"driverCores": 4,
+			"executorMemory": "28g",
+			"executorCores": 4,
+			"numExecutors": 2,
+			"conf": {
+				"spark.dynamicAllocation.enabled": "false",
+				"spark.dynamicAllocation.minExecutors": "2",
+				"spark.dynamicAllocation.maxExecutors": "2",
+				"spark.autotune.trackingId": "ef062fd6-628d-4576-b874-840b41c71d23"
+			}
+		},
+		"metadata": {
+			"saveOutput": true,
+			"synapse_widget": {
+				"version": "0.1"
+			},
+			"enableDebugMode": false,
+			"kernelspec": {
+				"name": "synapse_pyspark",
+				"display_name": "python"
+			},
+			"language_info": {
+				"name": "scala"
+			}
+		},
+		"cells": [
+			{
+				"cell_type": "code",
+				"source": [
+					"from azureml.opendatasets import NycTlcYellow\n",
+					"\n",
+					"data = NycTlcYellow()\n",
+					"df = data.to_spark_dataframe()\n",
+					"# Display 10 rows\n",
+					"display(df.limit(10))"
+				],
+				"attachments": null,
+				"execution_count": null
+			}
+		]
+	}
+}
